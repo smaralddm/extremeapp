@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="darktrust-verification" content="a3287d817dc9def447af3c5cce4ca7e1"></head>
+  <title>Extreme Miner App – Cloud Mining</title>
+  <meta name="description" content="Extreme Miner – Premium cloud-mining experience. Plans, instant payouts, safe deposits." />
+<meta name="robots" content="index, follow">
+<meta name="author" content="Extreme Miner App">
+<meta name="keywords" content="Cloud mining, crypto mining app, bitcoin mining, extreme miner, tor cloud mining">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+
+<meta property="og:title" content="Extreme Miner App">
+<meta property="og:description" content="Cloud mining with instant payouts and premium plans.">
+<meta property="og:type" content="website">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      color:#f7f7ff;
+      line-height:1.6;
+      background:
+        radial-gradient(1200px 700px at 20% 10%, rgba(0,229,255,0.18), transparent 55%),
+        radial-gradient(900px 600px at 85% 25%, rgba(227,62,138,0.20), transparent 55%),
+        radial-gradient(700px 500px at 40% 95%, rgba(146,24,255,0.18), transparent 60%),
+        linear-gradient(180deg, #070016 0%, #0b0022 55%, #050012 100%);
+      overflow-x:hidden;
+    }
+    a{ color:inherit; }
+    img{ max-width:100%; display:block; }
+
+    :root{
+      --glass: rgba(255,255,255,0.06);
+      --border: rgba(255,255,255,0.14);
+      --shadow: 0 18px 55px rgba(0,0,0,0.55);
+      --shadowSoft: 0 10px 25px rgba(0,0,0,0.35);
+      --cyan:#00e5ff;
+      --pink:#e33e8a;
+      --violet:#8e24aa;
+      --gold:#ffd166;
+    }
+
+    .container{
+      width:min(1140px, calc(100% - 2rem));
+      margin:0 auto;
+    }
+
+    /* Top/hero */
+    .hero{
+      position:relative;
+      isolation:isolate;
+      padding:4.5rem 0 3rem;
+      min-height:92vh;
+      display:grid;
+      align-items:center;
+    }
+    .hero::before{
+      content:"";
+      position:absolute; inset:0;
+      background-image:url("./554fd5b4-5de6-49dd-a650-deaea33344a4.png");
+      background-size:cover;
+      background-position:center;
+      opacity:.22;
+      filter:saturate(1.1) contrast(1.05);
+      z-index:-2;
+    }
+    .hero::after{
+      content:"";
+      position:absolute; inset:0;
+      background:
+        radial-gradient(900px 520px at 18% 18%, rgba(0,229,255,0.20), transparent 60%),
+        radial-gradient(900px 520px at 78% 18%, rgba(227,62,138,0.22), transparent 62%),
+        linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.75));
+      z-index:-1;
+    }
+
+    .hero-grid{
+      display:grid;
+      gap:2.2rem;
+      grid-template-columns:1fr;
+      padding-top:1.5rem;
+      align-items:center;
+    }
+
+    .glass-card{
+      background:var(--glass);
+      border:1px solid var(--border);
+      border-radius:1.4rem;
+      padding:2.2rem 1.6rem;
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(14px);
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:.55rem;
+      padding:.5rem .85rem;
+      border-radius:999px;
+      background:linear-gradient(135deg, rgba(0,229,255,0.16), rgba(227,62,138,0.14));
+      border:1px solid rgba(255,255,255,0.12);
+      backdrop-filter:blur(10px);
+      box-shadow:var(--shadowSoft);
+      font-size:.9rem;
+      color:rgba(255,255,255,0.92);
+      white-space:nowrap;
+    }
+    .pill .dot{
+      width:10px; height:10px; border-radius:99px;
+      background: radial-gradient(circle at 30% 30%, #fff, var(--cyan));
+      box-shadow:0 0 18px rgba(0,229,255,0.6);
+    }
+
+    h1{
+      margin:.6rem 0 .7rem;
+      font-size: clamp(2.1rem, 4vw, 3.6rem);
+      line-height:1.08;
+      letter-spacing:-0.02em;
+      background:linear-gradient(90deg, var(--cyan), #ffffff, var(--pink));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+
+    .tagline{
+      margin:0 0 1.3rem;
+      color:rgba(255,255,255,0.85);
+      font-size: clamp(1rem, 1.6vw, 1.25rem);
+      max-width: 70ch;
+    }
+
+    .cta-row{
+      display:flex;
+      gap:.9rem;
+      flex-wrap:wrap;
+      margin-top:1.1rem;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:.6rem;
+      padding:.9rem 1.25rem;
+      border-radius:999px;
+      font-weight:800;
+      text-decoration:none;
+      border:1px solid rgba(255,255,255,0.14);
+      background: linear-gradient(135deg, rgba(92,107,192,0.95) 0%, rgba(142,36,170,0.95) 55%, rgba(227,62,138,0.90) 100%);
+      box-shadow:0 14px 35px rgba(0,0,0,0.45);
+      transition: transform .18s ease, filter .18s ease;
+      min-width:230px;
+    }
+    .btn:hover{ transform:translateY(-3px); filter:brightness(1.07); }
+    .btn.secondary{
+      background: linear-gradient(135deg, rgba(0,229,255,0.22), rgba(255,255,255,0.07));
+      border:1px solid rgba(0,229,255,0.22);
+    }
+
+    .sub-row{
+      margin-top:1.25rem;
+      display:flex;
+      gap:.6rem;
+      flex-wrap:wrap;
+      opacity:.95;
+    }
+
+    /* Phone frame */
+    .phone-wrap{ display:grid; place-items:center; }
+    .phone{
+      width:min(360px, 100%);
+      aspect-ratio: 9 / 19.5;
+      border-radius:2.2rem;
+      padding:.85rem;
+      background:linear-gradient(145deg, rgba(255,255,255,0.10), rgba(255,255,255,0.03));
+      border:1px solid rgba(255,255,255,0.16);
+      box-shadow:0 35px 80px rgba(0,0,0,0.55);
+      position:relative;
+      overflow:hidden;
+    }
+    .phone::before{
+      content:"";
+      position:absolute; inset:-80px;
+      background:
+        radial-gradient(circle at 25% 20%, rgba(0,229,255,0.20), transparent 55%),
+        radial-gradient(circle at 75% 25%, rgba(227,62,138,0.22), transparent 55%),
+        radial-gradient(circle at 55% 85%, rgba(146,24,255,0.20), transparent 60%);
+      z-index:0;
+    }
+    .phone-top{
+      position:absolute;
+      top:10px; left:50%;
+      transform:translateX(-50%);
+      width:44%;
+      height:18px;
+      border-radius:999px;
+      background:rgba(0,0,0,0.35);
+      border:1px solid rgba(255,255,255,0.10);
+      z-index:2;
+    }
+    .screen{
+      position:relative; z-index:1;
+      height:100%;
+      border-radius:1.65rem;
+      overflow:hidden;
+      background:rgba(0,0,0,0.35);
+      border:1px solid rgba(255,255,255,0.12);
+    }
+    .screen img{ width:100%; height:100%; object-fit:cover; }
+    .mini-note{
+      margin-top:1rem;
+      text-align:center;
+      color:rgba(255,255,255,0.70);
+      font-size:.92rem;
+    }
+
+    /* Sections */
+    section{ padding: 3.2rem 0; }
+    .section-head{
+      text-align:center;
+      margin-bottom:1.7rem;
+    }
+    .section-head h2{
+      margin:0 0 .5rem;
+      font-size:2.05rem;
+      letter-spacing:-0.02em;
+    }
+    .section-head p{
+      margin:0 auto;
+      max-width: 80ch;
+      color:rgba(255,255,255,0.82);
+    }
+
+    /* Planuri */
+    .plans-wrap{
+      background: radial-gradient(circle at 50% 20%, rgba(255,255,255,0.06), rgba(0,0,0,0.10));
+      border-top:1px solid rgba(255,255,255,0.10);
+      border-bottom:1px solid rgba(255,255,255,0.10);
+    }
+    .plans-grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    .plan{
+      background: rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.12);
+      border-radius: 1.2rem;
+      padding: 1.15rem 1.15rem;
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadowSoft);
+      position:relative;
+      overflow:hidden;
+      transition: transform .18s ease, border-color .18s ease;
+    }
+    .plan:hover{
+      transform: translateY(-4px);
+      border-color: rgba(0,229,255,0.22);
+    }
+    .plan::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(400px 140px at 20% 10%, rgba(0,229,255,0.18), transparent 55%),
+        radial-gradient(420px 160px at 85% 30%, rgba(227,62,138,0.16), transparent 55%);
+      opacity:.7;
+      z-index:0;
+    }
+    .plan-inner{ position:relative; z-index:1; display:flex; gap:1rem; align-items:flex-start; }
+
+    .plan-badge{
+      width: 46px; height: 46px;
+      border-radius: 14px;
+      display:grid; place-items:center;
+      background: linear-gradient(135deg, rgba(0,229,255,0.20), rgba(227,62,138,0.16));
+      border: 1px solid rgba(255,255,255,0.14);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.28);
+      flex: 0 0 auto;
+      font-weight: 900;
+    }
+    .plan-title{
+      margin:0 0 .25rem;
+      font-size:1.15rem;
+      letter-spacing:-0.01em;
+    }
+    .plan-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.5rem .7rem;
+      color: rgba(255,255,255,0.78);
+      font-size:.95rem;
+    }
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap:.4rem;
+      padding:.35rem .6rem;
+      border-radius:999px;
+      background: rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.10);
+    }
+    .chip strong{
+      color: rgba(255,255,255,0.94);
+      font-weight: 800;
+    }
+
+    .warning{
+      margin-top:1.2rem;
+      padding:1rem 1.1rem;
+      border-radius:1rem;
+      background: linear-gradient(135deg, rgba(255,209,102,0.15), rgba(255,255,255,0.04));
+      border:1px solid rgba(255,209,102,0.28);
+      color: rgba(255,255,255,0.90);
+    }
+    .warning .title{
+      display:flex;
+      align-items:center;
+      gap:.6rem;
+      font-weight:900;
+      margin-bottom:.35rem;
+      color: rgba(255,235,180,0.98);
+    }
+    .warning .icon{
+      width:30px; height:30px;
+      border-radius:10px;
+      display:grid; place-items:center;
+      background: rgba(255,209,102,0.16);
+      border:1px solid rgba(255,209,102,0.28);
+      box-shadow:0 10px 20px rgba(0,0,0,0.25);
+    }
+
+    /* Desktop preview */
+    .preview-grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 1.4rem;
+      align-items:center;
+    }
+    .preview-frame{
+      background: linear-gradient(145deg, rgba(255,255,255,0.10), rgba(255,255,255,0.03));
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 1.4rem;
+      box-shadow: 0 35px 80px rgba(0,0,0,0.55);
+      overflow:hidden;
+      position:relative;
+    }
+    .preview-bar{
+      display:flex;
+      gap:.5rem;
+      padding:.75rem .9rem;
+      border-bottom: 1px solid rgba(255,255,255,0.10);
+      background: rgba(0,0,0,0.25);
+      align-items:center;
+    }
+    .dotbtn{
+      width:10px; height:10px; border-radius:99px;
+      background: rgba(255,255,255,0.25);
+    }
+    .preview-title{
+      margin-left:.3rem;
+      font-size:.92rem;
+      color: rgba(255,255,255,0.75);
+      letter-spacing:.01em;
+    }
+    .preview-frame img{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+
+    footer{
+      padding: 1.6rem 0;
+      text-align:center;
+      color: rgba(255,255,255,0.55);
+      font-size:.9rem;
+      border-top:1px solid rgba(255,255,255,0.10);
+      background: rgba(0,0,0,0.18);
+    }
+
+    @media (min-width: 820px){
+      .hero-grid{ grid-template-columns: 1.15fr .85fr; }
+      .cta-row{ justify-content:flex-start; }
+      .sub-row{ justify-content:flex-start; }
+
+      .plans-grid{ grid-template-columns: repeat(2, 1fr); }
+
+      .preview-grid{ grid-template-columns: 1fr 1fr; }
+    }
+    @media (min-width: 1100px){
+      .plans-grid{ grid-template-columns: repeat(3, 1fr); }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container hero-grid">
+      <div class="glass-card">
+        <span class="pill"><span class="dot"></span> Cloud Mining App</span>
+
+        <h1>Extreme Miner</h1>
+        <p class="tagline">
+          Experience cloud mining without the hardware. Premium visuals, real metrics,
+          and a smooth, modern dashboard — built for speed.
+        </p>
+
+        <div class="cta-row">
+          <!-- Pune link real către .apk -->
+<a class="btn" href="ExtremeMiner.apk" download>
+  <span>⬇️</span> Download for Android (.apk)
+</a>
+
+<a class="btn secondary" href="ExtremeMinerInstaller.exe" download>
+  <span>🪟</span> Download for Windows (.exe)
+</a>
+
+        </div>
+
+        <div class="sub-row">
+          <span class="pill"><span class="dot"></span> Instant Payouts</span>
+          <span class="pill"><span class="dot"></span> Safe Deposits</span>
+          <span class="pill"><span class="dot"></span> Fast UI</span>
+        </div>
+      </div>
+
+      <div class="phone-wrap">
+        <div class="phone" aria-label="App preview phone">
+          <div class="phone-top" aria-hidden="true"></div>
+          <div class="screen">
+            <img src="./1.gif" alt="Extreme Miner app preview" />
+          </div>
+        </div>
+        <div class="mini-note">Preview: mobile dashboard</div>
+      </div>
+    </div>
+  </header>
+<section>
+  <div class="container">
+    <h2>What is Extreme Miner App?</h2>
+    <p>
+      Extreme Miner is a cloud mining platform designed to let users have 
+      real cryptocurrency mining services. Users can explore mining
+      plans, hash power levels, and dashboard metrics without physical mining hardware.
+    </p>
+  </div>
+</section>
+
+
+  <!-- PLANS -->
+  <section class="plans-wrap">
+    <div class="container">
+      <div class="section-head">
+        <h2>Buy Hash Power Plans</h2>
+        <p>Choose a plan and unlock higher TH/s performance. A purchased plan remains active for 30 days in which you can mine whatever cryptocurrency you want</p>
+      </div>
+
+      <div class="plans-grid">
+        <article class="plan">
+          <div class="plan-inner">
+            <div class="plan-badge">S</div>
+            <div>
+              <h3 class="plan-title">Starter</h3>
+              <div class="plan-meta">
+                <span class="chip">⚡ <strong>1000.0</strong> TH/s</span>
+                <span class="chip">💳 <strong>$250.0</strong></span>
+                <span class="chip">₿ <strong>0.002370</strong> BTC/day</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="plan">
+          <div class="plan-inner">
+            <div class="plan-badge">A</div>
+            <div>
+              <h3 class="plan-title">Advanced</h3>
+              <div class="plan-meta">
+                <span class="chip">⚡ <strong>3000.0</strong> TH/s</span>
+                <span class="chip">💳 <strong>$500.0</strong></span>
+                <span class="chip">₿ <strong>0.007110</strong> BTC/day</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="plan">
+          <div class="plan-inner">
+            <div class="plan-badge">P</div>
+            <div>
+              <h3 class="plan-title">Pro</h3>
+              <div class="plan-meta">
+                <span class="chip">⚡ <strong>6000.0</strong> TH/s</span>
+                <span class="chip">💳 <strong>$1000.0</strong></span>
+                <span class="chip">₿ <strong>0.014220</strong> BTC/day</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="plan">
+          <div class="plan-inner">
+            <div class="plan-badge">E</div>
+            <div>
+              <h3 class="plan-title">Elite</h3>
+              <div class="plan-meta">
+                <span class="chip">⚡ <strong>10000.0</strong> TH/s</span>
+                <span class="chip">💳 <strong>$2000.0</strong></span>
+                <span class="chip">₿ <strong>0.023700</strong> BTC/day</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="plan">
+          <div class="plan-inner">
+            <div class="plan-badge">M</div>
+            <div>
+              <h3 class="plan-title">Master</h3>
+              <div class="plan-meta">
+                <span class="chip">⚡ <strong>15000.0</strong> TH/s</span>
+                <span class="chip">💳 <strong>$3000.0</strong></span>
+                <span class="chip">₿ <strong>0.035550</strong> BTC/day</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="plan">
+          <div class="plan-inner">
+            <div class="plan-badge">U</div>
+            <div>
+              <h3 class="plan-title">Ultra</h3>
+              <div class="plan-meta">
+                <span class="chip">⚡ <strong>20000.0</strong> TH/s</span>
+                <span class="chip">💳 <strong>$5000.0</strong></span>
+                <span class="chip">₿ <strong>0.047400</strong> BTC/day</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="plan">
+          <div class="plan-inner">
+            <div class="plan-badge">T</div>
+            <div>
+              <h3 class="plan-title">Titan</h3>
+              <div class="plan-meta">
+                <span class="chip">⚡ <strong>25000.0</strong> TH/s</span>
+                <span class="chip">💳 <strong>$10000.0</strong></span>
+                <span class="chip">₿ <strong>0.059250</strong> BTC/day</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="plan">
+          <div class="plan-inner">
+            <div class="plan-badge">L</div>
+            <div>
+              <h3 class="plan-title">Legend</h3>
+              <div class="plan-meta">
+                <span class="chip">⚡ <strong>30000.0</strong> TH/s</span>
+                <span class="chip">💳 <strong>$20000.0</strong></span>
+                <span class="chip">₿ <strong>0.071100</strong> BTC/day</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="warning" role="note" aria-label="Deposit attention note">
+        <div class="title">
+          <span class="icon">⚠️</span>
+          <span>Deposit Attention</span>
+        </div>
+        <div>
+          Safe deposits: <strong>Attention when you purcashe a plan you must send the exact amount else the transaction will be undetected and you lose coins!</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESKTOP PREVIEW -->
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <h2>Desktop Version Preview</h2>
+        <p>See how Extreme Miner looks and runs on PC.</p>
+      </div>
+
+      <div class="preview-grid">
+        <div class="glass-card">
+          <h3 style="margin:0 0 .6rem; letter-spacing:-0.01em;">Smooth Windows Experience</h3>
+          <p style="margin:0; color: rgba(255,255,255,0.82);">
+            Modern interface, clear stats and premium cloud mining. The desktop version keeps the same
+            style and performance focus as mobile.
+          </p>
+
+          <div class="sub-row" style="margin-top:1.1rem;">
+            <span class="pill"><span class="dot"></span> Premium Dashboard</span>
+            <span class="pill"><span class="dot"></span> Fast Navigation</span>
+            <span class="pill"><span class="dot"></span> Real Crypto Rewards</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="preview-frame" aria-label="Desktop preview frame">
+            <div class="preview-bar">
+              <span class="dotbtn"></span><span class="dotbtn"></span><span class="dotbtn"></span>
+              <span class="preview-title">Extreme Miner — Desktop Preview</span>
+            </div>
+            <img src="./2.gif" alt="Extreme Miner desktop preview />
+          </div>
+          <div class="mini-note">Preview: desktop app running</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<footer>
+  <div style="
+    max-width:1140px;
+    margin:0 auto;
+    padding:1.2rem 1rem;
+    display:flex;
+    flex-direction:column;
+    gap:.5rem;
+    align-items:center;
+    text-align:center;
+  ">
+    <div style="font-weight:700; letter-spacing:.02em;">
+      Contact & Support
+    </div>
+
+    <a href="mailto:eminersupport@proton.me"
+       style="
+         color:#00e5ff;
+         text-decoration:none;
+         font-weight:600;
+       ">
+      eminersupport@proton.me
+    </a>
+
+    <div style="
+      font-size:.85rem;
+      color:rgba(255,255,255,0.55);
+      margin-top:.4rem;
+    ">
+      For support, inquiries, and account assistance
+    </div>
+
+    <div style="
+      font-size:.8rem;
+      color:rgba(255,255,255,0.45);
+      margin-top:.6rem;
+    ">
+      © 2026 Extreme Miner. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
